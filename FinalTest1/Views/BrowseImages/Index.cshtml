@@ -1,0 +1,76 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+@model List<FinalTest1.Photo>
+
+
+<p>&nbsp;</p>
+
+<p style="text-align: center;"><span style="font-size:24px;"><span style="font-family:times new roman,times,serif;"><span style="color:#FF0000;">Photo Viewer</span></span></span></p>
+@{
+    List<string> mysources=new List<string>();
+    bool lastPage = false;
+ }
+@for (int i=1; i<=7; i++)
+{
+   try 
+   {
+       mysources.Add( Model[i-1].Source);
+   }
+   catch
+   {
+       mysources.Add ("");
+       lastPage = true;
+   }
+}
+
+
+<table align="center" border="1" cellpadding="1" cellspacing="1" height="430" style="height:200px;width:200px;" width="329">
+	<tbody>
+		<tr>
+			@*<th style="text-align: center; vertical-align: middle; background-color: rgb(51, 204, 255); white-space: nowrap;"><span style="font-size:18px;">Bla Bla Bla</span></th>*@
+            <td style="width: 208px;">You need to select your window to start the Journey of Discovery</td>
+            @{string ss = "/keywording?page=" + ((ViewBag.currPage -1) * 7 + 1).ToString() + "&sortOrder=" + ViewBag.sortOrder;}
+			<td style="width: 208px;"><a href=@ss><img alt="" height="155" src="~/AppImages/@mysources[0]" width="208" /></a></td>
+            @{ss = "/keywording?page=" + ((ViewBag.currPage -1) * 7 + 2).ToString() + "&sortOrder=" + ViewBag.sortOrder;}
+			<td style="width: 208px;"><a href=@ss><img alt="" height="155" src="~/AppImages/@mysources[1]" width="208" /></a></td>
+		</tr>
+		<tr>
+            @{ss = "/keywording?page=" + ((ViewBag.currPage -1) * 7 + 3).ToString() + "&sortOrder=" + ViewBag.sortOrder;}
+			<td><a href=@ss><img alt="" height="155" src="~/AppImages/@mysources[2]" width="208" /></a></td>
+            @{ss = "/keywording?page=" + ((ViewBag.currPage -1) * 7 + 4).ToString() + "&sortOrder=" + ViewBag.sortOrder;}
+			<td><a href=@ss><img alt="" height="155" src="~/AppImages/@mysources[3]" width="208" /></a></td>
+            @{ss = "/keywording?page=" + ((ViewBag.currPage -1) * 7 + 5).ToString() + "&sortOrder=" + ViewBag.sortOrder;}
+			<td><a href=@ss><img alt="" height="155" src="~/AppImages/@mysources[4]" width="208" /></a></td>
+		</tr>
+		<tr>
+            @{ss = "/keywording?page=" + ((ViewBag.currPage -1) * 7 + 6).ToString() + "&sortOrder=" + ViewBag.sortOrder;}
+			<td><a href=@ss><img alt="" height="155" src="~/AppImages/@mysources[5]" width="208" /></a></td>
+            @{ss = "/keywording?page=" + ((ViewBag.currPage -1) * 7 + 7).ToString() + "&sortOrder=" + ViewBag.sortOrder;}
+			<td><a href=@ss><img alt="" height="155" src="~/AppImages/@mysources[6]" width="208" /></a></td>
+            @if (lastPage)
+            {
+                <td>No more windows to show.</td>
+            }
+            else
+            {
+                <td><a href =@ViewBag.NextPage>I don’t like any of these windows. I want to see other windows.</a> </td>
+            }
+			@*<th style="text-align: center; vertical-align: middle; background-color: rgb(51, 204, 255);"><span style="font-size:18px;">Click Next</span></th>*@
+		</tr>
+	</tbody>
+</table>
+
+<p>&nbsp;</p>
+
+@{
+    string s = ViewBag.NextPage;
+}
+
+<!-- <button>  <input name="next" type="button" value="next" /> </button> -->
+<a href=@ViewBag.PrevPage> Prev </a>
+<text>@ViewBag.start - @ViewBag.end  , page @ViewBag.currPage out of @ViewBag.pagesNum</text>
+<a href=@ViewBag.NextPage> Next </a>
+
+You are viewing now all the available photos on the site, you can start using the @Html.ActionLink("filters and search functions","Index","BrowsingOptions")
+

@@ -1,0 +1,94 @@
+﻿@using FinalTest1.Models
+
+@model PassData
+
+
+
+<html>
+
+@{
+    int count;
+    try{
+    count = Model.CurrentKeyword.Count();
+    }
+    catch
+    {
+      count = 0;
+    }
+    int firstColumn = (int)(count / 2);
+    int secondColumn = count - firstColumn;
+}
+	<head>
+		<title>Photo View</title>
+	</head>
+	<body>
+		<table align="center" border="1" cellpadding="1" cellspacing="1" height="252" width="567">
+			<tbody>
+				<tr>
+					<td rowspan="3" style="white-space: nowrap;">
+                       
+						
+                    @for (int i = 0; i < firstColumn; i++ )
+                    {
+                        //string s = @ViewBag.NextPage + "&tag=true" + "&tagvalue=" + @Model.CurrentKeyword[i].Id.ToString();
+                        
+                      @Html.ActionLink(@Model.CurrentKeyword[i].keywordText,"Index","AddKeyword", new { page = ViewBag.CurrentPage, photoID = Model.xPhoto.Id, keywordID = Model.CurrentKeyword[i].Id, sortOrder = ViewBag.sortOrder}, null)   
+                       <p>
+							<br />
+							@*<span style="color:#0000ff;"> @Model.CurrentKeyword[i].keywordText </span>*@
+
+						</p>
+                        
+                      }
+						
+                    
+
+					</td>
+					<td rowspan="3" style="text-align: center; vertical-align: middle;">
+						<span style="color:#0000ff;"><img alt="Can't View this Photo" height="267" src="~/AppImages/@Model.xPhoto.Source" width="357" /></span>
+                        @Model.xPhoto.title<br />
+                        Artist: @Model.xPhoto.Album.Artist.name <br />
+                        Album: @Model.xPhoto.Album.title <br />
+                        Date: @Model.xPhoto.dateAndTime <br />
+                        No. of likes: @Model.xPhoto.likesNO<br />
+                        No. of comments: @Model.xPhoto.commentsNO<br />
+					</td>
+					<td rowspan="3">
+						
+
+
+                   @for (int i = 0; i < secondColumn; i++ )
+                    {
+                        //string s = @ViewBag.NextPage + "&tag=true" + "&tagvalue=" + @Model.CurrentKeyword[i + firstColumn].Id.ToString();
+                       @Html.ActionLink(@Model.CurrentKeyword[i+firstColumn].keywordText,"Index","AddKeyword", new { page = ViewBag.CurrentPage, photoID = Model.xPhoto.Id, keywordID = Model.CurrentKeyword[i].Id, sortOrder = ViewBag.sortOrder}, null) 
+                       <p>
+							<br />
+							@*<span style="color:#0000ff;"> @Model.CurrentKeyword[i].keywordText </span>*@
+
+						</p>
+                        
+                   }
+
+
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+        @if (count!=0)
+        {
+		<p style="text-align: center;">
+			<span style="color:#0000ff;"><strong>What do you see in this photo? Please click on a keyword.</strong></span></p>
+		}
+        else
+        {
+            <p style="text-align: center;">
+			<span style="color:#0000ff;"><strong>No more photos to tag</strong></span></p>
+        }
+            
+    
+    <p style="text-align: center;">
+		<span style="color:#0000ff;"><strong><a href=@ViewBag.PrevPage>&lt;&lt;</a> &nbsp; @ViewBag.CurrentPage of @ViewBag.totalCount &nbsp; <a href=@ViewBag.NextPage>&gt;&gt;</a></strong></span></p>
+    
+    </body>
+</html>

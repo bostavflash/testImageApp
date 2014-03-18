@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Browse Images</h2>
+@Html.ActionLink("Browse Images Ordered by Likes Number", "Index", "BrowseImages"); <br />
+@Html.ActionLink("Browse Images Ordered by Comments Number", "Index", "BrowseImages", new { orderBy = "comments" }, null);<br />
+@Html.ActionLink("Browse Images Ordered by Artist Name", "Index", "BrowseImages", new { orderBy = "artist" }, null);<br />
+Or you can search by artist name <br />
+@using(Html.BeginForm("Index","Search", FormMethod.Post))
+{
+    <p>
+        Search artworks by artist : @Html.TextBox("artist")
+        <input type="submit" value="Submit" name="Search" />     
+    </p>
+}

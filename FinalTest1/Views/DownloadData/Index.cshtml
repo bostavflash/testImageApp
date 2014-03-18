@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Download Data</h2>
+@Html.ActionLink("Download site user's data", "DownloadUserInfo", "DownloadData");
+<br />
+@if (!((ViewBag.result).Equals("")))
+{
+    @ViewBag.result
+}

@@ -1,0 +1,680 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{39BB385C-1D83-4A6F-B44A-B338BE9EA531}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FinalTest1</RootNamespace>
+    <AssemblyName>FinalTest1</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort>44305</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Facebook">
+      <HintPath>..\packages\Facebook.6.4.2\lib\net45\Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20715.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.2.0.20710.0\lib\net40\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebPages.OAuth, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.OAuth.2.0.20710.0\lib\net40\Microsoft.Web.WebPages.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.2.0.20710.0\lib\net40\WebMatrix.WebData.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.1.4.12333\lib\net45-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.OData, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.OData.4.0.0\lib\net40\System.Web.Http.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Data.Edm.5.2.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Data.OData.5.2.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Spatial, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\System.Spatial.5.2.0\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AddKeywordController.cs" />
+    <Compile Include="Controllers\BrowseImagesController.cs" />
+    <Compile Include="Controllers\BrowsingOptionsController.cs" />
+    <Compile Include="Controllers\DownloadDataController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KeywordingController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="CustomClients\ScopedFacebookClient.cs" />
+    <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\PassData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SysClasses.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SysClasses.dbml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AppImages\1003223_1436493769920370_765258981_n.jpg" />
+    <Content Include="AppImages\1008426_678351395539581_1545947778_o.jpg" />
+    <Content Include="AppImages\1008677_1434806496755764_862382745_o.jpg" />
+    <Content Include="AppImages\1013743_1436374596598954_2099300068_n.jpg" />
+    <Content Include="AppImages\1052835_593615597354674_154351662_o.jpg" />
+    <Content Include="AppImages\1074380_597332263649674_474476753_o.jpg" />
+    <Content Include="AppImages\1146166_600700053312895_1675246060_o.jpg" />
+    <Content Include="AppImages\1167270_1440112862891794_362955576_o.jpg" />
+    <Content Include="AppImages\1233042_568067939909440_1915737731_o.jpg" />
+    <Content Include="AppImages\1233082_567556446627256_1880013022_o.jpg" />
+    <Content Include="AppImages\1235448_596316213751279_2019836553_n.jpg" />
+    <Content Include="AppImages\1235548_600922126624021_416285963_n.jpg" />
+    <Content Include="AppImages\1237416_567522696630631_1482325414_o.jpg" />
+    <Content Include="AppImages\1244273_567454183304149_670427830_o.jpg" />
+    <Content Include="AppImages\1244583_582738071775760_269588701_o.jpg" />
+    <Content Include="AppImages\1262627_569143033135264_31788979_o.jpg" />
+    <Content Include="AppImages\1262910_568180926564808_1198137112_o.jpg" />
+    <Content Include="AppImages\1263039_567881759928058_830181578_o.jpg" />
+    <Content Include="AppImages\1264096_570842752965292_1776996790_o.jpg" />
+    <Content Include="AppImages\1264295_569244529791781_1349718688_o.jpg" />
+    <Content Include="AppImages\1264350_569565926426308_852999909_o.jpg" />
+    <Content Include="AppImages\1264598_571727242876843_899054110_o.jpg" />
+    <Content Include="AppImages\1265529_567346726648228_1108992282_o.jpg" />
+    <Content Include="AppImages\1265703_1382064262029988_1861852017_o.jpg" />
+    <Content Include="AppImages\1266447_568051766577724_1560827598_o.jpg" />
+    <Content Include="AppImages\1266890_570137959702438_1698978768_o.jpg" />
+    <Content Include="AppImages\1267726_570318643017703_2089220755_o.jpg" />
+    <Content Include="AppImages\1267795_569518233097744_748862099_o.jpg" />
+    <Content Include="AppImages\1267972_567760109940223_754279371_o.jpg" />
+    <Content Include="AppImages\1268468_567939263255641_547891187_o.jpg" />
+    <Content Include="AppImages\1268659_1379328452303569_220982344_o.jpg" />
+    <Content Include="AppImages\1268827_570486109667623_1360252846_o.jpg" />
+    <Content Include="AppImages\1268876_567968249919409_667623192_o.jpg" />
+    <Content Include="AppImages\1268957_570340186348882_1079561375_o.jpg" />
+    <Content Include="AppImages\1272662_570953696287531_762219406_o.jpg" />
+    <Content Include="AppImages\1272861_568369993212568_1218725463_o.jpg" />
+    <Content Include="AppImages\1273248_598636310185936_540187821_o.jpg" />
+    <Content Include="AppImages\1274027_567191013330466_117348415_o.jpg" />
+    <Content Include="AppImages\1274397_570488629667371_2075030134_o.jpg" />
+    <Content Include="AppImages\1275308_598730000176567_1042530962_o.jpg" />
+    <Content Include="AppImages\1275443_569368839779350_2046992948_o.jpg" />
+    <Content Include="AppImages\1275574_1438011596435254_1447856140_o.jpg" />
+    <Content Include="AppImages\1276549_1378062092430205_902614668_o.jpg" />
+    <Content Include="AppImages\1276730_568106896572211_408789110_o.jpg" />
+    <Content Include="AppImages\1276977_567753999940834_86356992_o.jpg" />
+    <Content Include="AppImages\1277446_598952003487700_1722058990_o.jpg" />
+    <Content Include="AppImages\1277519_567383156644585_1016542423_o.jpg" />
+    <Content Include="AppImages\1277960_567183976664503_1407931207_o.jpg" />
+    <Content Include="AppImages\1278783_569264656456435_680026874_o.jpg" />
+    <Content Include="AppImages\1278813_567358969980337_238375151_o.jpg" />
+    <Content Include="AppImages\1278933_567247953324772_2106967445_o.jpg" />
+    <Content Include="AppImages\1279005_569541279762106_1711553163_o.jpg" />
+    <Content Include="AppImages\1291911_567398909976343_1977670756_o.jpg" />
+    <Content Include="AppImages\1292811_567197383329829_1719640979_o.jpg" />
+    <Content Include="AppImages\1292854_570321336350767_705316579_o.jpg" />
+    <Content Include="AppImages\1292886_1378886232347791_1889802153_o.jpg" />
+    <Content Include="AppImages\1294481_607976735918560_690637190_o.jpg" />
+    <Content Include="AppImages\1294531_571112432938324_457354349_o.jpg" />
+    <Content Include="AppImages\1294591_567791309937103_768904027_o.jpg" />
+    <Content Include="AppImages\1381264_595845387131695_244566848_n.jpg" />
+    <Content Include="AppImages\1385280_594556263927274_1763892927_n.jpg" />
+    <Content Include="AppImages\1391772_606780246038209_1408133321_n.jpg" />
+    <Content Include="AppImages\1396917_606343639415203_1467834778_o.jpg" />
+    <Content Include="AppImages\1396977_598555973527303_1398027556_o.jpg" />
+    <Content Include="AppImages\1397055_595919547124279_341321956_o.jpg" />
+    <Content Include="AppImages\1397121_604896906226543_1871046614_o.jpg" />
+    <Content Include="AppImages\1397124_597229763659924_387897697_o.jpg" />
+    <Content Include="AppImages\1397187_608006012582299_73223583_o.jpg" />
+    <Content Include="AppImages\1397357_602535216462712_1806700724_o.jpg" />
+    <Content Include="AppImages\1397541_608529562529944_1099367797_o.jpg" />
+    <Content Include="AppImages\1397671_597150767001157_1210044743_o.jpg" />
+    <Content Include="AppImages\1397682_612846922098208_1074467822_o.jpg" />
+    <Content Include="AppImages\1397726_609015405814693_743646228_o.jpg" />
+    <Content Include="AppImages\1397747_614740135242220_77148987_o.jpg" />
+    <Content Include="AppImages\1397859_595760753806825_1028134624_o.jpg" />
+    <Content Include="AppImages\1397862_596430173739883_527400665_o.jpg" />
+    <Content Include="AppImages\1397934_597769160272651_1121309907_o.jpg" />
+    <Content Include="AppImages\1398139_1403338236569257_584761450_o.jpg" />
+    <Content Include="AppImages\1398349_612380202144880_1332878325_o.jpg" />
+    <Content Include="AppImages\1398391_607592735956960_1256444704_o.jpg" />
+    <Content Include="AppImages\1398427_599107673472133_370442089_o.jpg" />
+    <Content Include="AppImages\1398491_609376055778628_728906855_o.jpg" />
+    <Content Include="AppImages\1398495_607155929333974_674799190_o.jpg" />
+    <Content Include="AppImages\1398520_613651452017755_1045464337_o.jpg" />
+    <Content Include="AppImages\1398630_599420656774168_209270397_o.jpg" />
+    <Content Include="AppImages\1398785_597955730253994_1087217870_o.jpg" />
+    <Content Include="AppImages\1398798_598962636819970_1358262336_o.jpg" />
+    <Content Include="AppImages\1399093_607607259288841_1552016264_o.jpg" />
+    <Content Include="AppImages\1399304_608534885862745_1799553466_o.jpg" />
+    <Content Include="AppImages\1399354_601914166524817_213161228_o.jpg" />
+    <Content Include="AppImages\1399385_597200310329536_401290540_o.jpg" />
+    <Content Include="AppImages\1399418_615453081837592_1929083243_o.jpg" />
+    <Content Include="AppImages\1399529_611942388855328_492367769_o.jpg" />
+    <Content Include="AppImages\1399631_614647368584830_773821105_o.jpg" />
+    <Content Include="AppImages\1399670_606042686111965_88144387_o.jpg" />
+    <Content Include="AppImages\1399829_607098132673087_1387995021_o.jpg" />
+    <Content Include="AppImages\1399838_603834219666145_1491890331_o.jpg" />
+    <Content Include="AppImages\1400202_597570086959225_360575426_o.jpg" />
+    <Content Include="AppImages\1400215_606983329351234_483945713_o.jpg" />
+    <Content Include="AppImages\1400236_611820348867532_2004199415_o.jpg" />
+    <Content Include="AppImages\1400540_608547542528146_145621405_o.jpg" />
+    <Content Include="AppImages\1400569_607190729330494_1889924778_o.jpg" />
+    <Content Include="AppImages\1400784_608961259153441_1383507593_o.jpg" />
+    <Content Include="AppImages\1400816_608991262483774_1297280113_o.jpg" />
+    <Content Include="AppImages\1401143_615053468544220_1844540369_o.jpg" />
+    <Content Include="AppImages\1401246_611935672189333_1227732864_o.jpg" />
+    <Content Include="AppImages\1401262_601453083237592_880231256_o.jpg" />
+    <Content Include="AppImages\1401405_601973109852256_675652845_o.jpg" />
+    <Content Include="AppImages\1401448_597559600293607_67741947_o.jpg" />
+    <Content Include="AppImages\1401543_598053380244229_1686163005_o.jpg" />
+    <Content Include="AppImages\1401751_608553299194237_210408722_o.jpg" />
+    <Content Include="AppImages\1401773_607529742629926_658539634_o.jpg" />
+    <Content Include="AppImages\1401820_614716718577895_1834999331_o.jpg" />
+    <Content Include="AppImages\1401838_597146867001547_552194607_o.jpg" />
+    <Content Include="AppImages\1401888_601654639884103_347840188_o.jpg" />
+    <Content Include="AppImages\1401907_610903322292568_213051076_o.jpg" />
+    <Content Include="AppImages\1401948_597715150278052_768550578_o.jpg" />
+    <Content Include="AppImages\1401956_597033527012881_762816808_o.jpg" />
+    <Content Include="AppImages\1401973_618575024858731_868185320_o.jpg" />
+    <Content Include="AppImages\1402311_594094807306753_1607080089_o.jpg" />
+    <Content Include="AppImages\1402401_598979966818237_1226861074_o.jpg" />
+    <Content Include="AppImages\1402469_598517943531106_285519667_o.jpg" />
+    <Content Include="AppImages\1402830_601445643238336_135886985_o.jpg" />
+    <Content Include="AppImages\1402902_604008816315352_714862760_o.jpg" />
+    <Content Include="AppImages\1402902_612488918800675_1061210011_o.jpg" />
+    <Content Include="AppImages\1402942_604011862981714_1185396270_o.jpg" />
+    <Content Include="AppImages\1403160_615084388541128_314361571_o.jpg" />
+    <Content Include="AppImages\1403309_616340225082211_1132234659_o.jpg" />
+    <Content Include="AppImages\1403431_614635561919344_58029650_o.jpg" />
+    <Content Include="AppImages\1403504_604025166313717_1803359015_o.jpg" />
+    <Content Include="AppImages\1403628_599826200066947_1614272507_o.jpg" />
+    <Content Include="AppImages\1403654_614743441908556_1431157913_o.jpg" />
+    <Content Include="AppImages\1404410_599380206778213_613974818_o.jpg" />
+    <Content Include="AppImages\1404600_595184510531116_951853660_o.jpg" />
+    <Content Include="AppImages\1404847_608543602528540_443870033_o.jpg" />
+    <Content Include="AppImages\1404872_607523099297257_484963440_o.jpg" />
+    <Content Include="AppImages\1405041_611604932222407_1317012809_o.jpg" />
+    <Content Include="AppImages\1410719_1409435422626205_17390392_o.jpg" />
+    <Content Include="AppImages\1410729_607113219338245_924922423_o.jpg" />
+    <Content Include="AppImages\1410776_607175862665314_391535399_o.jpg" />
+    <Content Include="AppImages\1410888_595868290462738_245467709_o.jpg" />
+    <Content Include="AppImages\1412236_613253428724224_1413852976_o.jpg" />
+    <Content Include="AppImages\1412507_619989784717255_1898132500_o.jpg" />
+    <Content Include="AppImages\1412739_608953879154179_1439390493_o.jpg" />
+    <Content Include="AppImages\1415161_614712018578365_309182878_o.jpg" />
+    <Content Include="AppImages\1415209_614713021911598_11212368_o.jpg" />
+    <Content Include="AppImages\1415245_609375915778642_1301278775_o.jpg" />
+    <Content Include="AppImages\1417518_607680319281535_940494367_o.jpg" />
+    <Content Include="AppImages\1421222_607608599288707_1128671718_o.jpg" />
+    <Content Include="AppImages\1425404_607811052601795_943360183_o.jpg" />
+    <Content Include="AppImages\1426513_607598239289743_514303203_n.jpg" />
+    <Content Include="AppImages\1450147_609376542445246_1566598015_n.jpg" />
+    <Content Include="AppImages\1453326_614741841908716_618630478_n.jpg" />
+    <Content Include="AppImages\1455105_614712795244954_732608549_n.jpg" />
+    <Content Include="AppImages\1458460_607158206000413_1115785776_n.jpg" />
+    <Content Include="AppImages\1461540_614255845290649_1682574322_n.jpg" />
+    <Content Include="AppImages\1462537_610899215626312_1909885324_o.jpg" />
+    <Content Include="AppImages\1462604_607605299289037_153477443_o.jpg" />
+    <Content Include="AppImages\1462626_611946498854917_1882566078_o.jpg" />
+    <Content Include="AppImages\1462664_604365376279696_1003652351_o.jpg" />
+    <Content Include="AppImages\1462671_607125962670304_964597935_o.jpg" />
+    <Content Include="AppImages\1462721_614714668578100_1403566319_o.jpg" />
+    <Content Include="AppImages\1462786_617154275000806_103312967_o.jpg" />
+    <Content Include="AppImages\1462839_611821888867378_793320999_o.jpg" />
+    <Content Include="AppImages\1462884_614739251908975_1701889223_n.jpg" />
+    <Content Include="AppImages\1463457_639359176105470_2005250343_n.jpg" />
+    <Content Include="AppImages\1465357_609397225776511_1513952126_n.jpg" />
+    <Content Include="AppImages\1465797_605260569523510_1718005529_o.jpg" />
+    <Content Include="AppImages\1484014_1430983817138032_1885211323_o.jpg" />
+    <Content Include="AppImages\1484033_616746398374927_320396745_o.jpg" />
+    <Content Include="AppImages\1484040_614019885314245_983572370_o.jpg" />
+    <Content Include="AppImages\1485976_615367705179463_1693906431_o.jpg" />
+    <Content Include="AppImages\1487678_618546941528206_2138357807_o.jpg" />
+    <Content Include="AppImages\1490888_648561398518581_107142940_o.jpg" />
+    <Content Include="AppImages\1491455_618542238195343_1981420313_o.jpg" />
+    <Content Include="AppImages\1491492_1429730893929991_142762052_o.jpg" />
+    <Content Include="AppImages\1492341_1431964047040009_961720159_o.jpg" />
+    <Content Include="AppImages\1492664_1437721983130882_1368007326_o.jpg" />
+    <Content Include="AppImages\1493333_1430777270492020_1563074145_o.jpg" />
+    <Content Include="AppImages\1493343_1436018996634514_2036219070_o.jpg" />
+    <Content Include="AppImages\1495326_1432030560366691_625704297_o.jpg" />
+    <Content Include="AppImages\1496673_1434167460153001_1505827669_n.jpg" />
+    <Content Include="AppImages\1500839_630940823622151_56204709_o.jpg" />
+    <Content Include="AppImages\1500983_625705534145680_1008922945_o.jpg" />
+    <Content Include="AppImages\1501605_1436001569969590_348936924_o.jpg" />
+    <Content Include="AppImages\1502320_1427078284195252_2134035499_o.jpg" />
+    <Content Include="AppImages\1506301_1431544843748596_1985533245_o.jpg" />
+    <Content Include="AppImages\1507059_1439794129590334_1530917826_n.jpg" />
+    <Content Include="AppImages\1507258_1431855137050900_1753771800_o.jpg" />
+    <Content Include="AppImages\1507310_1438348563068224_412716729_o.jpg" />
+    <Content Include="AppImages\1507427_637296802986553_1551657887_o.jpg" />
+    <Content Include="AppImages\1511692_1436142006622213_98167438_o.jpg" />
+    <Content Include="AppImages\1519291_1438890529680694_882789346_o.jpg" />
+    <Content Include="AppImages\1519666_634563366593230_504396096_o.jpg" />
+    <Content Include="AppImages\1522706_1436708706565543_1366967097_o.jpg" />
+    <Content Include="AppImages\1523226_631425356907031_157899194_o.jpg" />
+    <Content Include="AppImages\1523233_1432274033675677_1578454875_o.jpg" />
+    <Content Include="AppImages\1523467_1437301583172922_1331984158_o.jpg" />
+    <Content Include="AppImages\1523805_1433924733510607_1359771716_o.jpg" />
+    <Content Include="AppImages\1532055_656761401031914_1981231913_o.jpg" />
+    <Content Include="AppImages\1534822_677836462257741_1894860357_o.jpg" />
+    <Content Include="AppImages\1540354_675386445836076_283088205_o.jpg" />
+    <Content Include="AppImages\1544353_1435725506663863_158374636_n.jpg" />
+    <Content Include="AppImages\1548106_638523149530585_2058001830_o.jpg" />
+    <Content Include="AppImages\1551542_1435114380058309_1810854109_n.jpg" />
+    <Content Include="AppImages\1553148_660521670655887_1426875820_o.jpg" />
+    <Content Include="AppImages\1556265_1432572016979212_1351998118_o.jpg" />
+    <Content Include="AppImages\1556301_1433254280244319_1683610729_o.jpg" />
+    <Content Include="AppImages\155667_455709724472829_382243557_n.jpg" />
+    <Content Include="AppImages\1557393_676321012409286_1669408618_o.jpg" />
+    <Content Include="AppImages\1597236_1432741520295595_261547387_o.jpg" />
+    <Content Include="AppImages\1602203_635463629836537_421188816_o.jpg" />
+    <Content Include="AppImages\1614204_677868238921230_1251209797_o.jpg" />
+    <Content Include="AppImages\1614357_1434269726809441_1051881030_o.jpg" />
+    <Content Include="AppImages\1614576_1441059766130437_1015270048_o.jpg" />
+    <Content Include="AppImages\1614603_1438774696358944_963162520_o.jpg" />
+    <Content Include="AppImages\1614607_1437340553169025_734504116_o.jpg" />
+    <Content Include="AppImages\1617389_1442374089332338_1186308411_o.jpg" />
+    <Content Include="AppImages\1618250_1438775873025493_1581985296_o.jpg" />
+    <Content Include="AppImages\1618355_1440449996191414_2009070349_o.jpg" />
+    <Content Include="AppImages\1618535_1435312916705122_835492072_n.jpg" />
+    <Content Include="AppImages\1618626_1436374559932291_70881235_n.jpg" />
+    <Content Include="AppImages\1619428_1436374506598963_34104254_n.jpg" />
+    <Content Include="AppImages\1655057_649875688395331_1192083166_o.jpg" />
+    <Content Include="AppImages\1655691_676320159076038_1380564595_o.jpg" />
+    <Content Include="AppImages\1658475_653587418024158_297112547_o.jpg" />
+    <Content Include="AppImages\1658574_673381436036577_1738370746_o.jpg" />
+    <Content Include="AppImages\1669852_677836082257779_928393241_o.jpg" />
+    <Content Include="AppImages\169120_455282687848866_290999185_o.jpg" />
+    <Content Include="AppImages\174999_455259967851138_1591556514_o.jpg" />
+    <Content Include="AppImages\175096_454546171255851_634035246_o.jpg" />
+    <Content Include="AppImages\175475_454324461278022_1097415829_o.jpg" />
+    <Content Include="AppImages\175995_454363694607432_1405479020_o.jpg" />
+    <Content Include="AppImages\176636_455288317848303_2140363330_o.jpg" />
+    <Content Include="AppImages\177299_455256424518159_495182661_o.jpg" />
+    <Content Include="AppImages\1781563_675383165836404_1876987334_o.jpg" />
+    <Content Include="AppImages\1782536_1440190266217387_1922256096_o.jpg" />
+    <Content Include="AppImages\1795874_675765522464835_875863622_o.jpg" />
+    <Content Include="AppImages\1836684_676034302437957_1338626590_o.jpg" />
+    <Content Include="AppImages\1891330_677727378935316_2124181952_o.jpg" />
+    <Content Include="AppImages\1891349_677867502254637_285090672_o.jpg" />
+    <Content Include="AppImages\1907815_679952822046105_298978865_o.jpg" />
+    <Content Include="AppImages\1911177_649433928439507_175015447_o.jpg" />
+    <Content Include="AppImages\1912276_677983482243039_265530297_o.jpg" />
+    <Content Include="AppImages\255927_435002299874493_1082769499_o.jpg" />
+    <Content Include="AppImages\256337_478331222210679_150136204_o.jpg" />
+    <Content Include="AppImages\413141_477883818922086_981393091_o.jpg" />
+    <Content Include="AppImages\414539_455281507848984_513919617_o.jpg" />
+    <Content Include="AppImages\481537_502257189815670_1713458867_n.jpg" />
+    <Content Include="AppImages\52236_454333511277117_181916335_o.jpg" />
+    <Content Include="AppImages\522821_455623207814814_485513973_n.jpg" />
+    <Content Include="AppImages\539473_457944910915977_355189838_n.jpg" />
+    <Content Include="AppImages\559539_461320323911769_1254461518_n.jpg" />
+    <Content Include="AppImages\58438_1436374659932281_806059404_n.jpg" />
+    <Content Include="AppImages\59477_458607144183087_1876193881_n.jpg" />
+    <Content Include="AppImages\60269_455701774473624_1412715788_n.jpg" />
+    <Content Include="AppImages\620815_454540814589720_1780453717_o.jpg" />
+    <Content Include="AppImages\621354_456050377772097_1016122508_o.jpg" />
+    <Content Include="AppImages\741271_599455213437379_2139376829_o.jpg" />
+    <Content Include="AppImages\823599_511640695543986_223028679_o.jpg" />
+    <Content Include="AppImages\856162_602128456503388_1616540807_o.jpg" />
+    <Content Include="AppImages\856211_626434267406140_1397886498_o.jpg" />
+    <Content Include="AppImages\856763_567248503324717_1028289459_o.jpg" />
+    <Content Include="AppImages\857868_1437889783114102_1803115062_o.jpg" />
+    <Content Include="AppImages\857936_603026616413572_818063476_o.jpg" />
+    <Content Include="AppImages\857978_609401532442747_169412861_o.jpg" />
+    <Content Include="AppImages\858571_610340275682206_2130092993_o.jpg" />
+    <Content Include="AppImages\858868_592120514170849_770570386_o.jpg" />
+    <Content Include="AppImages\858875_593536044029296_1466317702_o.jpg" />
+    <Content Include="AppImages\860317_567863773263190_1778078611_o.jpg" />
+    <Content Include="AppImages\861343_623282297721337_2079041659_o.jpg" />
+    <Content Include="AppImages\882538_1392503614319386_867558360_o.jpg" />
+    <Content Include="AppImages\882803_1385018895067858_748259419_o.jpg" />
+    <Content Include="AppImages\884394_597144097001824_1313943698_o.jpg" />
+    <Content Include="AppImages\884929_599117620137805_742863338_o.jpg" />
+    <Content Include="AppImages\884985_614510498598517_982972606_o.jpg" />
+    <Content Include="AppImages\891842_570495243000043_1130279300_o.jpg" />
+    <Content Include="AppImages\892931_570491823000385_1667475901_o.jpg" />
+    <Content Include="AppImages\893911_613230225393211_229149019_o.jpg" />
+    <Content Include="AppImages\894541_615089328540634_1782830692_o.jpg" />
+    <Content Include="AppImages\894717_568373889878845_757429958_o.jpg" />
+    <Content Include="AppImages\894817_1405592169677197_1147939546_o.jpg" />
+    <Content Include="AppImages\901186_614713551911545_1933556956_o.jpg" />
+    <Content Include="AppImages\901339_597689806947253_2094485314_o.jpg" />
+    <Content Include="AppImages\902570_569131799803054_1260980259_o.jpg" />
+    <Content Include="AppImages\903194_614715611911339_2119737882_o.jpg" />
+    <Content Include="AppImages\903459_604336546282579_82286699_o.jpg" />
+    <Content Include="AppImages\903894_609993115716922_795997821_o.jpg" />
+    <Content Include="AppImages\904334_568683136514587_946859264_o.jpg" />
+    <Content Include="AppImages\906120_594945107221723_501010878_o.jpg" />
+    <Content Include="AppImages\906157_605229539526613_780973381_o.jpg" />
+    <Content Include="AppImages\906182_611483882234512_1678184605_o.jpg" />
+    <Content Include="AppImages\906426_568061326576768_1507452844_o.jpg" />
+    <Content Include="AppImages\919495_614749725241261_303912879_o.jpg" />
+    <Content Include="AppImages\946022_568887896494111_598803829_n.jpg" />
+    <Content Include="AppImages\964104_570315723017995_832049355_o.jpg" />
+    <Content Include="AppImages\964665_601190999930467_50061321_o.jpg" />
+    <Content Include="AppImages\964942_601155259934041_100927543_o.jpg" />
+    <Content Include="AppImages\965941_570511736331727_513228982_o.jpg" />
+    <Content Include="AppImages\977323_609381095778124_770851843_o.jpg" />
+    <Content Include="AppImages\980960_599335940115973_1594670555_o.jpg" />
+    <Content Include="AppImages\links.txt" />
+    <Content Include="App_Data\aspnet-FinalTest1-20140313135249.mdf" />
+    <Content Include="App_Data\aspnet-FinalTest1-20140313135249_log.ldf">
+      <DependentUpon>aspnet-FinalTest1-20140313135249.mdf</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.8.2.js" />
+    <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-2.2.0.debug.js" />
+    <Content Include="Scripts\knockout-2.2.0.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\_RemoveExternalLoginsPartial.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="SysClasses.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>SysClasses.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\BrowseImages\Index.cshtml" />
+    <Content Include="Views\BrowsingOptions\Index.cshtml" />
+    <Content Include="Views\Search\Index.cshtml" />
+    <Content Include="Views\Keywording\Index.cshtml" />
+    <Content Include="Views\DownloadData\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SysClasses.dbml.layout">
+      <DependentUpon>SysClasses.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2050/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
